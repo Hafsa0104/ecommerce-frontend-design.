@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="listing.css">
+    <title>Mobile Accessories - E-commerce</title>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+    <header>
+        <div class="logo">
+            <img id="brand-logo" src="images/logo-symbol.png" alt="Brand logo">
+            <img id="brand-name-logo" src="images/Brand@2x.png" alt="Brand name">
+        </div>
+
+        <div class="searchContainer">
+            <input type="text" placeholder="Search products, brands and more..." class="search-input" id="searchInput">
+
+            <div class="search-menu" id="searchMenu">
+                <div class="search-top">
+                    <div>
+                        <div class="search-column-title">
+                            <span>Recent searches</span>
+                            <button class="clear-btn">Clear all</button>
+                        </div>
+                        <div class="search-item"><i class="fa-regular fa-clock"></i> Wireless headphones</div>
+                        <div class="search-item"><i class="fa-regular fa-clock"></i> Smart watch</div>
+                        <div class="search-item"><i class="fa-regular fa-clock"></i> Men shoes</div>
+                        <div class="search-item"><i class="fa-regular fa-clock"></i> Laptop bag</div>
+                    </div>
+                    <div>
+                        <div class="search-column-title"><span>Trending searches</span></div>
+                        <div class="search-item"><i class="fa-solid fa-arrow-trend-up"></i> iPhone 15</div>
+                        <div class="search-item"><i class="fa-solid fa-arrow-trend-up"></i> Samsung Galaxy S24</div>
+                        <div class="search-item"><i class="fa-solid fa-arrow-trend-up"></i> Air fryer</div>
+                        <div class="search-item"><i class="fa-solid fa-arrow-trend-up"></i> Gaming chair</div>
+                    </div>
+                </div>
+                <hr class="search-divider">
+                <div class="popular-title">Popular categories</div>
+                <div class="popular-categories">
+                    <div class="category-chip">
+                        <div class="category-chip-icon"><i class="fa-solid fa-headphones"></i></div>
+                        <span class="category-chip-label">Electronics</span>
+                    </div>
+                    <div class="category-chip">
+                        <div class="category-chip-icon"><i class="fa-solid fa-shirt"></i></div>
+                        <span class="category-chip-label">Fashion</span>
+                    </div>
+                    <div class="category-chip">
+                        <div class="category-chip-icon"><i class="fa-solid fa-couch"></i></div>
+                        <span class="category-chip-label">Home &amp; Living</span>
+                    </div>
+                    <div class="category-chip">
+                        <div class="category-chip-icon"><i class="fa-solid fa-pump-soap"></i></div>
+                        <span class="category-chip-label">Beauty</span>
+                    </div>
+                    <div class="category-chip">
+                        <div class="category-chip-icon"><i class="fa-solid fa-football"></i></div>
+                        <span class="category-chip-label">Sports</span>
+                    </div>
+                    <div class="category-chip">
+                        <div class="category-chip-icon"><i class="fa-solid fa-gamepad"></i></div>
+                        <span class="category-chip-label">Toys &amp; Games</span>
+                    </div>
+                    <div class="category-chip">
+                        <div class="category-chip-icon"><i class="fa-solid fa-car"></i></div>
+                        <span class="category-chip-label">Automotive</span>
+                    </div>
+                    <div class="category-chip">
+                        <div class="category-chip-icon"><i class="fa-solid fa-border-all"></i></div>
+                        <span class="category-chip-label">More</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-cat-dropdown" id="headerCatDropdown">
+                <button class="header-cat-trigger" id="headerCatTrigger">
+                    All category
+                    <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <div class="header-cat-menu" id="headerCatMenu">
+                    <div class="header-cat-item selected" onclick="selectHeaderCat(this, 'All category')"><i
+                            class="fa-solid fa-border-all"></i> All category</div>
+                    <div class="header-cat-item" onclick="selectHeaderCat(this, 'Automobiles')"><i
+                            class="fa-solid fa-car"></i> Automobiles</div>
+                    <div class="header-cat-item" onclick="selectHeaderCat(this, 'Clothes and wear')"><i
+                            class="fa-solid fa-shirt"></i> Clothes and wear</div>
+                    <div class="header-cat-item" onclick="selectHeaderCat(this, 'Home interiors')"><i
+                            class="fa-solid fa-house"></i> Home interiors</div>
+                    <div class="header-cat-item" onclick="selectHeaderCat(this, 'Computer and tech')"><i
+                            class="fa-solid fa-computer"></i> Computer and tech</div>
+                    <div class="header-cat-item" onclick="selectHeaderCat(this, 'Tools, equipments')"><i
+                            class="fa-solid fa-screwdriver-wrench"></i> Tools, equipments</div>
+                    <div class="header-cat-item" onclick="selectHeaderCat(this, 'Sports and outdoor')"><i
+                            class="fa-solid fa-football"></i> Sports and outdoor</div>
+                    <div class="header-cat-item" onclick="selectHeaderCat(this, 'Animal and pets')"><i
+                            class="fa-solid fa-paw"></i> Animal and pets</div>
+                    <div class="header-cat-item" onclick="selectHeaderCat(this, 'Machinery tools')"><i
+                            class="fa-solid fa-gears"></i> Machinery tools</div>
+                    <div class="header-cat-footer"><span class="view-all-link">View all categories</span></div>
+                </div>
+            </div>
+
+            <button class="search-btn">Search</button>
+        </div>
+
+        <div class="header-links">
+            <div class="header-item"><i class="fa-solid fa-user"></i><span>Profile</span></div>
+            <div class="header-item"><i class="fa-regular fa-comment"></i><span>Message</span></div>
+            <div class="header-item"><i class="fa-solid fa-heart"></i><span>Orders</span></div>
+            <div class="header-item"><i class="fa-solid fa-cart-shopping"></i><span>My cart</span></div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+    <nav class="main-nav">
+        <div class="nav-left">
+            <ul class="nav-items">
+                <li class="nav-item active">
+                    <button class="hamburger-btn" id="allCategoryBtn">
+                        <i class="fa-solid fa-bars"></i>
+                        All Category
+                    </button>
+                </li>
+                <li class="nav-item">Hot offers</li>
+                <li class="nav-item">Gift boxes</li>
+                <li class="nav-item">Projects</li>
+                <li class="nav-item">Menu item</li>
+                <li class="nav-item help-item">
+                    Help
+                    <div class="help-menu">
+                        <div class="help-section-title">Customer Support</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-phone"></i> Contact us</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-comment"></i> Live chat</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-envelope"></i> Email support</div>
+                        <hr class="help-divider">
+                        <div class="help-section-title">Quick Help</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-circle-question"></i> FAQ</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-box"></i> Track my order</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-rotate-left"></i> Returns &amp; refunds</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-shield"></i> Buyer protection</div>
+                        <hr class="help-divider">
+                        <div class="help-section-title">About</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-circle-info"></i> About us</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-file-lines"></i> Terms &amp; conditions</div>
+                        <div class="help-menu-item"><i class="fa-solid fa-lock"></i> Privacy policy</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-dropdown" id="lngDropdown">
+                <button class="nav-dropdown-trigger" id="lngTrigger">
+                    English, USD
+                    <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <div class="nav-dropdown-menu" id="lngMenu">
+                    <div class="nav-dropdown-item selected" onclick="selectLng(this, 'English, USD')">English, USD</div>
+                    <div class="nav-dropdown-item" onclick="selectLng(this, 'Germany, DE')">Germany, DE</div>
+                    <div class="nav-dropdown-item" onclick="selectLng(this, 'Denmark, DK')">Denmark, DK</div>
+                    <div class="nav-dropdown-item" onclick="selectLng(this, 'Chinese, CNY')">Chinese, CNY</div>
+                    <div class="nav-dropdown-item" onclick="selectLng(this, 'Italy, IT')">Italy, IT</div>
+                    <div class="nav-dropdown-item" onclick="selectLng(this, 'Russia, RU')">Russia, RU</div>
+                    <div class="nav-dropdown-item" onclick="selectLng(this, 'United Arab Emirates, UAE')">United Arab
+                        Emirates, UAE</div>
+                </div>
+            </div>
+
+            <div class="nav-dropdown" id="shipDropdown">
+                <button class="nav-dropdown-trigger" id="shipTrigger">
+                    Germany
+                    <img src="images/flags/DE@2x.png">
+                    <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <div class="nav-dropdown-menu" id="shipMenu">
+                    <div class="nav-dropdown-item selected" onclick="selectShip(this, 'Germany')"><img
+                            src="images/flags/DE@2x.png"> Germany</div>
+                    <div class="nav-dropdown-item" onclick="selectShip(this, 'USA')"><img src="images/flags/US@2x.png">
+                        USA</div>
+                    <div class="nav-dropdown-item" onclick="selectShip(this, 'UAE')"><img src="images/flags/AE@2x.png">
+                        UAE</div>
+                    <div class="nav-dropdown-item" onclick="selectShip(this, 'Denmark')"><img
+                            src="images/flags/DK@2x.png"> Denmark</div>
+                    <div class="nav-dropdown-item" onclick="selectShip(this, 'Italy')"><img
+                            src="images/flags/IT@2x.png"> Italy</div>
+                    <div class="nav-dropdown-item" onclick="selectShip(this, 'China')"><img
+                            src="images/flags/CN@2x.png"> China</div>
+                    <div class="nav-dropdown-item" onclick="selectShip(this, 'Russia')"><img
+                            src="images/flags/RU@2x.png"> Russia</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════ LISTING PAGE BODY ═══════════════════════════ -->
+    <div class="listing-page-container">
+
+        <!-- BREADCRUMB -->
+        <div class="breadcrumb">
+            <a href="#">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">Catalogue</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">Men's wear</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Summer clothing</span>
+        </div>
+
+        <div class="listing-layout">
+
+            <!-- ══════════ LEFT SIDEBAR FILTERS ══════════ -->
+            <aside class="filter-sidebar">
+
+                <!-- Category -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Category</h4>
+                    <ul class="filter-cat-list">
+                        <li class="filter-cat-item active">Mobile accessory</li>
+                        <li class="filter-cat-item">Laptops</li>
+                        <li class="filter-cat-item">Electronics</li>
+                        <li class="filter-cat-item">Smartphones</li>
+                        <li class="filter-cat-item">Modern tech</li>
+                    </ul>
+                </div>
+
+                <div class="filter-divider"></div>
+
+                <!-- Brands -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Brands</h4>
+                    <div class="filter-search-wrap">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search brands">
+                    </div>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked> Samsung
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> Apple
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> Huawei
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> Pocco
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> Lenovo
+                    </label>
+                    <a href="#" class="filter-see-all">See all</a>
+                </div>
+
+                <div class="filter-divider"></div>
+
+                <!-- Features -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Features</h4>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> Metallic
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked> Plastic cover
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> 8GB Ram
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> Super power
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> Large Memory
+                    </label>
+                    <a href="#" class="filter-see-all">See all</a>
+                </div>
+
+                <div class="filter-divider"></div>
+
+                <!-- Price range -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Price range</h4>
+                    <div class="price-slider-wrap">
+                        <input type="range" class="price-slider" id="priceSlider" min="0" max="9999" value="4000">
+                    </div>
+                    <div class="price-inputs">
+                        <div class="price-input-group">
+                            <label>Min</label>
+                            <input type="number" value="0" placeholder="0">
+                        </div>
+                        <span class="price-dash">–</span>
+                        <div class="price-input-group">
+                            <label>Max</label>
+                            <input type="number" value="9999" placeholder="9999">
+                        </div>
+                    </div>
+                    <button class="price-apply-btn">Apply</button>
+                </div>
+
+                <div class="filter-divider"></div>
+
+                <!-- Condition -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Condition</h4>
+                    <label class="filter-radio">
+                        <input type="radio" name="condition" checked> Any
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="condition"> Refurbished
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="condition"> Brand new
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="condition"> Old items
+                    </label>
+                </div>
+
+                <div class="filter-divider"></div>
+
+                <!-- Ratings -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Ratings</h4>
+                    <label class="filter-radio rating-row">
+                        <input type="radio" name="rating" checked>
+                        <span class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                    </label>
+                    <label class="filter-radio rating-row">
+                        <input type="radio" name="rating">
+                        <span class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </label>
+                    <label class="filter-radio rating-row">
+                        <input type="radio" name="rating">
+                        <span class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </label>
+                    <label class="filter-radio rating-row">
+                        <input type="radio" name="rating">
+                        <span class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </label>
+                    <label class="filter-radio rating-row">
+                        <input type="radio" name="rating">
+                        <span class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </span>
+                    </label>
+                </div>
+                <div class="filter-divider"></div>
+
+                <!-- Manufacturer -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Manufacturer</h4>
+                    <div class="filter-search-wrap">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search manufacturer">
+                    </div>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked> Samsung
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked> Apple
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> Huawei
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked> Poco
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox"> Lenovo
+                    </label>
+                    <a href="#" class="filter-see-all">See all</a>
+                </div>
+            </aside>
+
+            <!-- ══════════ MAIN CONTENT AREA ══════════ -->
+            <div class="listing-main">
+
+                <!-- Top bar: results count + verified + sort -->
+                <div class="listing-topbar">
+                    <p class="results-count"><span>12,911</span> items in <strong>Mobile accessory</strong></p>
+                    <div class="topbar-right">
+                        <label class="verified-toggle">
+                            <input type="checkbox" id="verifiedToggle" checked>
+                            <span class="toggle-slider"></span>
+                            Verified only
+                        </label>
+                        <span class="topbar-label">Featured</span>
+                        <div class="sort-dropdown">
+                            <select>
+                                <option>Best match</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Newest first</option>
+                                <option>Top rated</option>
+                            </select>
+                        </div>
+                        <div class="view-toggle">
+                            <button class="view-btn" id="listViewBtn" title="List view">
+                                <i class="fa-solid fa-list"></i>
+                            </button>
+
+                            <button class="view-btn active" id="gridViewBtn" title="Grid view">
+                                <i class="fa-solid fa-grip"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ACTIVE FILTER CHIPS -->
+                <div class="filter-chips-row">
+                    <div class="filter-chip active-chip">
+                        Samsung <button class="chip-remove">×</button>
+                    </div>
+                    <div class="filter-chip active-chip">
+                        Apple <button class="chip-remove">×</button>
+                    </div>
+                    <div class="filter-chip active-chip">
+                        Poco <button class="chip-remove">×</button>
+                    </div>
+                    <div class="filter-chip active-chip">
+                        Metallic <button class="chip-remove">×</button>
+                    </div>
+                    <div class="filter-chip active-chip">
+                        4 star <button class="chip-remove">×</button>
+                    </div>
+                    <div class="filter-chip active-chip">
+                        3 star <button class="chip-remove">×</button>
+                    </div>
+                    <button class="clear-all-filters">Clear all filters</button>
+                </div>
+
+                <!-- ── PRODUCT LIST ── -->
+                <div class="product-list grid-view" id="productList"></div>
+
+                <!-- Product 1 -->
+                <div class="plisting-card" onclick="location.href='detail.html'">
+                    <div class="plisting-img-wrap">
+                        <img src="images/tech/Canon-camera.png" alt="Canon Camera">
+                    </div>
+                    <div class="plisting-info">
+                        <h3 class="plisting-name">Canon EOS 2000, Black 10x zoom</h3>
+                        <div class="plisting-price-row">
+                            <span class="plisting-price">$998.00</span>
+                            <span class="plisting-old-price">$1,128.00</span>
+                        </div>
+                        <div class="plisting-rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="rating-count">154 orders</span>
+                            <span class="free-shipping"><i class="fa-solid fa-truck"></i> Free Shipping</span>
+                        </div>
+                        <p class="plisting-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="#" class="plisting-details-link">View details</a>
+                    </div>
+                    <button class="plisting-wishlist" title="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="plisting-card" onclick="location.href='detail.html'">
+                    <div class="plisting-img-wrap">
+                        <img src="images/tech/image 32.png" alt="GoPro Camera">
+                    </div>
+                    <div class="plisting-info">
+                        <h3 class="plisting-name">GoPro HERO6 4K Action Camera - Black</h3>
+                        <div class="plisting-price-row">
+                            <span class="plisting-price">$920.00</span>
+                        </div>
+                        <div class="plisting-rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="rating-count">154 orders</span>
+                            <span class="free-shipping"><i class="fa-solid fa-truck"></i> Free Shipping</span>
+                        </div>
+                        <p class="plisting-desc">Lorem ipsum dolor sit amet consectetur, adipiscing elit sed do
+                            eiusmod tempor ut labore et dolore magna aliqua dolor sit amet consectetur.</p>
+                        <a href="#" class="plisting-details-link">View details</a>
+                    </div>
+                    <button class="plisting-wishlist" title="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="plisting-card" onclick="location.href='detail.html'">
+                    <div class="plisting-img-wrap">
+                        <img src="images/tech/gopro-camera.png" alt="GoPro Camera Black">
+                    </div>
+                    <div class="plisting-info">
+                        <h3 class="plisting-name">GoPro HERO6 4K Action Camera - Black</h3>
+                        <div class="plisting-price-row">
+                            <span class="plisting-price">$998.00</span>
+                        </div>
+                        <div class="plisting-rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="rating-count">164 orders</span>
+                            <span class="free-shipping"><i class="fa-solid fa-truck"></i> Free Shipping</span>
+                        </div>
+                        <p class="plisting-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua lorem sit amet consectetur.
+                        </p>
+                        <a href="#" class="plisting-details-link">View details</a>
+                    </div>
+                    <button class="plisting-wishlist" title="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="plisting-card" onclick="location.href='detail.html'">
+                    <div class="plisting-img-wrap">
+                        <img src="images/tech/laptop.png" alt="Laptop">
+                    </div>
+                    <div class="plisting-info">
+                        <h3 class="plisting-name">GoPro HERO6 4K Action Camera - Black</h3>
+                        <div class="plisting-price-row">
+                            <span class="plisting-price">$998.00</span>
+                        </div>
+                        <div class="plisting-rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="rating-count">164 orders</span>
+                            <span class="free-shipping"><i class="fa-solid fa-truck"></i> Free Shipping</span>
+                        </div>
+                        <p class="plisting-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua lorem sit amet consectetur.
+                        </p>
+                        <a href="#" class="plisting-details-link">View details</a>
+                    </div>
+                    <button class="plisting-wishlist" title="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="plisting-card" onclick="location.href='detail.html'">
+                    <div class="plisting-img-wrap">
+                        <img src="images/tech/watch.png" alt="Smart Watch">
+                    </div>
+                    <div class="plisting-info">
+                        <h3 class="plisting-name">GoPro HERO6 4K Action Camera - Black</h3>
+                        <div class="plisting-price-row">
+                            <span class="plisting-price">$998.00</span>
+                        </div>
+                        <div class="plisting-rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="rating-count">164 orders</span>
+                            <span class="free-shipping"><i class="fa-solid fa-truck"></i> Free Shipping</span>
+                        </div>
+                        <p class="plisting-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua lorem sit amet consectetur.
+                        </p>
+                        <a href="#" class="plisting-details-link">View details</a>
+                    </div>
+                    <button class="plisting-wishlist" title="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="plisting-card" onclick="location.href='detail.html'">
+                    <div class="plisting-img-wrap">
+                        <img src="images/tech/white-headphone.png" alt="Headphones">
+                    </div>
+                    <div class="plisting-info">
+                        <h3 class="plisting-name">GoPro HERO6 4K Action Camera - Black</h3>
+                        <div class="plisting-price-row">
+                            <span class="plisting-price">$998.00</span>
+                        </div>
+                        <div class="plisting-rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="rating-count">164 orders</span>
+                            <span class="free-shipping"><i class="fa-solid fa-truck"></i> Free Shipping</span>
+                        </div>
+                        <p class="plisting-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua lorem sit amet consectetur.
+                        </p>
+                        <a href="#" class="plisting-details-link">View details</a>
+                    </div>
+                    <button class="plisting-wishlist" title="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- ── PAGINATION ── -->
+            <div class="pagination-wrap">
+                <span class="pagination-show-label">Show</span>
+                <select class="pagination-size-select">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+                <div class="pagination-pages">
+                    <button class="pg-btn pg-prev" disabled>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="pg-btn">1</button>
+                    <button class="pg-btn active">2</button>
+                    <button class="pg-btn">3</button>
+                    <button class="pg-btn pg-next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <!-- end listing-main -->
+
+    </div>
+    <!-- end listing-layout -->
+
+    </div>
+    <!-- end listing-page-container -->
+
+    <!-- ══════════ NEWSLETTER ══════════ -->
+    <section class="newsletter-section">
+        <h3>Subscribe on our newsletter</h3>
+        <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+        <div class="newsletter-form">
+            <div class="newsletter-input-wrap">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+            <button>Subscribe</button>
+        </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon"><img src="images/logo-symbol.png"></div>
+                    <div class="footer-logo-text"><img src="images/Brand@2x.png"></div>
+                </div>
+                <p class="footer-desc">Best information about the company goes here but now lorem ipsum is</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Find store</a>
+                <a href="#">Categories</a>
+                <a href="#">Blogs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Partnership</h4>
+                <a href="#">About Us</a>
+                <a href="#">Find store</a>
+                <a href="#">Categories</a>
+                <a href="#">Blogs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Money Refund</a>
+                <a href="#">Shipping</a>
+                <a href="#">Contact us</a>
+            </div>
+            <div class="footer-col">
+                <h4>For users</h4>
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+                <a href="#">Settings</a>
+                <a href="#">My Orders</a>
+            </div>
+            <div class="footer-col">
+                <h4>Get app</h4>
+                <img src="images/Misc/market-button.png" style="margin-bottom:10px;">
+                <img src="images/Misc/Group.png">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Ecommerce.</p>
+            <div class="footer-lang">
+                <img src="https://flagcdn.com/w20/us.png" alt="US flag">
+                <span>English</span>
+                <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // View toggle: list ↔ grid
+        const listViewBtn = document.getElementById('listViewBtn');
+        const gridViewBtn = document.getElementById('gridViewBtn');
+        const productList = document.getElementById('productList');
+
+        listViewBtn.addEventListener('click', () => {
+            productList.classList.remove('grid-view');
+            listViewBtn.classList.add('active');
+            gridViewBtn.classList.remove('active');
+        });
+
+        gridViewBtn.addEventListener('click', () => {
+            productList.classList.add('grid-view');
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+        });
+
+        // Pagination button active state
+        document.querySelectorAll('.pg-btn:not(.pg-prev):not(.pg-next)').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.pg-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Wishlist toggle
+        document.querySelectorAll('.plisting-wishlist').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const icon = btn.querySelector('i');
+                icon.classList.toggle('fa-regular');
+                icon.classList.toggle('fa-solid');
+                icon.style.color = icon.classList.contains('fa-solid') ? '#e74c3c' : '';
+            });
+        });
+
+        // Filter category active
+        document.querySelectorAll('.filter-cat-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.filter-cat-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
